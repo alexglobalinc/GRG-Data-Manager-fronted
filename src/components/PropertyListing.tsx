@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { PropertyFilters } from './PropertyFilters'
+import Header from './Header'
 import { PropertyTable } from './PropertyTable'
 import { fetchProperties, fetchFilterOptions, exportProperties } from '@/services/api'
 import { PropertyResponse, FilterOptions, PropertyFilters as PropertyFiltersType } from '@/types/property'
@@ -60,22 +60,24 @@ export default function PropertyListing() {
   }
 
   return (
-    <div className="space-y-6">
-      <PropertyFilters
+    <div className="-mx-4 -mt-4">
+      <Header
         filters={filters}
         filterOptions={filterOptions}
         onFilterChange={handleFilterChange}
         selectedProperties={selectedProperties}
         onExport={handleExport}
       />
-      <PropertyTable
-        properties={properties}
-        loading={loading}
-        error={error}
-        selectedProperties={selectedProperties}
-        setSelectedProperties={setSelectedProperties}
-        onPageChange={(newPage) => setFilters(prev => ({ ...prev, page: newPage }))}
-      />
+      <div className="container mx-auto px-4">
+        <PropertyTable
+          properties={properties}
+          loading={loading}
+          error={error}
+          selectedProperties={selectedProperties}
+          setSelectedProperties={setSelectedProperties}
+          onPageChange={(newPage) => setFilters(prev => ({ ...prev, page: newPage }))}
+        />
+      </div>
     </div>
   )
 }

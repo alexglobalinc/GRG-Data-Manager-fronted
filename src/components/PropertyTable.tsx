@@ -64,7 +64,7 @@ export function PropertyTable({
             ) : properties?.data.map((property) => (
               <TableRow
                 key={property.PropertyID}
-                className={selectedProperties.includes(property.PropertyID) ? "bg-blue-50" : ""}
+                className={selectedProperties.includes(property.PropertyID) ? "bg-blue-100 text-blue-900" : "text-gray-900"}
               >
                 <TableCell>
                   <Checkbox
@@ -78,16 +78,16 @@ export function PropertyTable({
                     }}
                   />
                 </TableCell>
-                <TableCell className="font-medium">{property.Property_Name}</TableCell>
-                <TableCell>{property.Property_Address}</TableCell>
-                <TableCell>{property.City}</TableCell>
-                <TableCell>{property.State}</TableCell>
-                <TableCell>{property.Zip}</TableCell>
-                <TableCell>{property.County_Name}</TableCell>
-                <TableCell>{property.PropertyType}</TableCell>
-                <TableCell>{property.contact_name}</TableCell>
-                <TableCell>{property.phone}</TableCell>
-                <TableCell>{property.email}</TableCell>
+                <TableCell className="font-semibold">{property.Property_Name}</TableCell>
+                <TableCell className="font-semibold">{property.Property_Address}</TableCell>
+                <TableCell className="font-semibold">{property.City}</TableCell>
+                <TableCell className="font-semibold">{property.State}</TableCell>
+                <TableCell className="font-semibold">{property.Zip}</TableCell>
+                <TableCell className="font-semibold">{property.County_Name}</TableCell>
+                <TableCell className="font-semibold">{property.PropertyType}</TableCell>
+                <TableCell className="font-semibold">{property.contact_name}</TableCell>
+                <TableCell className="font-semibold">{property.phone}</TableCell>
+                <TableCell className="font-semibold">{property.email}</TableCell>
                 <TableCell>
                   <div className="flex gap-2">
                     <Button variant="outline" size="sm">
@@ -128,3 +128,4 @@ export function PropertyTable({
     </div>
   )
 }
+
