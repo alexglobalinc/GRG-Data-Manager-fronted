@@ -9,9 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@copilotkit/react-core": "^1.4.7",
-    "@copilotkit/react-ui": "^1.4.7",
-    "@copilotkit/runtime": "^1.4.7",
+    "@copilotkit/react-core": "^1.7.1",
+    "@copilotkit/react-textarea": "^1.7.1",
+    "@copilotkit/react-ui": "^1.7.1",
+    "@copilotkit/runtime": "^1.7.1",
     "@radix-ui/react-checkbox": "^1.1.3",
     "@radix-ui/react-popover": "^1.1.3",
     "@radix-ui/react-select": "^2.1.3",

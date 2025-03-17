@@ -3,12 +3,11 @@ import { CopilotPopup } from "@copilotkit/react-ui";
 import "@copilotkit/react-ui/styles.css";
 import { useCoAgentStateRender } from "@copilotkit/react-core";
 
-
 import PropertyListing from "../components/PropertyListing"
 
 // Define the type for your agent's state
 type AgentState = {
-  messages: any[];
+  messages: Array<{content: string; role: string}>;  // Replace 'any' with a more specific type
   status?: "inProgress" | "complete";
   currentNode?: string;
   // Add other state properties based on your DatabaseAnalysisGraph state
@@ -38,20 +37,18 @@ export default function Home() {
   });
   return (
     <>
-      <main className="container mx-auto p-4">
-        <h1 className="text-2xl font-bold mb-4">Property Listing</h1>
+      <main className="container mx-auto p-4 max-w-full overflow-x-hidden">
         <PropertyListing />
       </main>
 
-
       <CopilotPopup 
-      className="fixed bottom-4 right-4 z-50"
-      instructions={"You are a helpful database assistant that helps marketing team members query a database using natural language."}
-      labels={{
-        title: "Global Roofing Group",
-        initial: "How can I help you analyze property data?",
-      }}
-      defaultOpen={true}
+        className="fixed bottom-4 right-4 z-50"
+        instructions={"You are a helpful database assistant that helps marketing team members query a database using natural language."}
+        labels={{
+          title: "Global Roofing Group",
+          initial: "How can I help you analyze property data?",
+        }}
+        defaultOpen={true}
       />
     </>
   );
